@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Jost', sans-serif;
+      background:  linear-gradient(to bottom, #0f0c29, #305b63, #f77f00);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 5px 20px 50px #000;
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #573b8a;
+    }
+
+    .link a {
+      display: inline-block;
+      margin-top: 15px;
+      color: #573b8a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+    .card {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .toggle-btn {
+      width: 100%;
+      background: #16848a;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 12px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background: #81b29a;
+    }
+
+    .collapsible {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease;
+      margin-top: 10px;
+    }
+
+    .collapsible.expanded {
+      max-height: 1000px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .card li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <h1>Welcome, {{.Username}}!</h1>
+    <p class="link"><a href="/logout">Logout</a></p>
+
+    <div class="card">
+      <button class="toggle-btn" onclick="toggleSecurity()">🛡️ Web Security Overview</button>
+      <div id="security-content" class="collapsible">
+<h2>🔐 Application Security Overview</h2>
+  <ul>
+    <li><strong>✅ HTTPS Encryption:</strong> All traffic is encrypted using TLS to protect your data in transit.</li>
+    <li><strong>✅ Secure Password Storage:</strong> Passwords are hashed using <code>bcrypt</code> before being stored.</li>
+    <li><strong>✅ SQL Injection Protection:</strong> All database interactions use parameterized queries to prevent injection attacks.</li>
+    <li><strong>✅ XSS Prevention:</strong> HTML templates automatically escape user input to avoid malicious script execution.</li>
+    <li><strong>⚠️ CSRF Protection:</strong> Not yet implemented — form submissions are currently unprotected against CSRF attacks.</li>
+    <li><strong>⚠️ Session Cookie Security:</strong> Cookies are HTTP-only but missing <code>Secure</code> and <code>SameSite</code> flags.</li>
+  </ul>
+  <p><em>We're continuously improving our security.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSecurity() {
+      const content = document.getElementById('security-content');
+      content.classList.toggle('expanded');
+    }
+  </script>
+</body>
+</html>
