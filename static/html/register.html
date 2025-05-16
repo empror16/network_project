@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Register</h1>
+
+    {{if .Error}}
+      <p class="error">{{.Error}}</p>
+    {{end}}
+
+    <form method="POST" action="/register">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Choose a username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter a password" required>
+
+      <label for="confirm_password">Confirm Password</label>
+      <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p class="link">Already have an account? <a href="/login">Login</a></p>
+  </div>
+</body>
+</html>
