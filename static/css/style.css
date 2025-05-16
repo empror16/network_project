@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, #0f0c29, #305b63, #f77f00);
+    color: #fff;
+}
+
+.container {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 5px 20px 50px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1em;
+    color: #f1f1f1;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: #e0dede;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background: #fff;
+    box-shadow: 0 0 5px rgba(87, 59, 138, 0.8);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #16848a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #81b29a;
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: #28f37e;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95em;
+    color: #a0c4ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
